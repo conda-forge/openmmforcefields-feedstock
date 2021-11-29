@@ -34,7 +34,6 @@ outputs:
     test:
       requires:
         - openmm
-        - python ==3.9
       imports:
         - openmmforcefields
 
@@ -49,8 +48,6 @@ outputs:
         - {{ pin_subpackage('openmmforcefields-base', max_pin="x.x.x") }}
 
     test:
-      requires:
-        - python ==3.9
       imports:
         - openmmforcefields
 
