@@ -10,28 +10,44 @@ source:
   sha256: c48a056bc811a20bb941e0a04de5c250743e85b0709dc7808236ba33c23d7ca4
 
 build:
-  noarch: python
-  number: 0
-  script: {{ PYTHON }} -m pip install . -vv --no-deps
+  number: 1
 
-requirements:
-  host:
-    - python >=3.6
-    - pip
-  run:
-    - python >=3.6
-    - openmm >=7.6.0
-    - pyyaml
-    - ambertools >=20.0
-    - lxml
-    - networkx
-    - tinydb
-    - openff-toolkit >=0.9.0
-    - openff-forcefields >=1.2.0
+outputs:
+  - name: openmmforcefields-base
+    script: build_base.sh
 
-test:
-  imports:
-    - openmmforcefields
+    requirements:
+      host:
+        - python >=3.6
+        - pip
+      run:
+        - python >=3.6
+        - openmm >=7.6.0
+        - pyyaml
+        - ambertools >=20.0
+        - lxml
+        - networkx
+        - tinydb
+
+    test:
+      requires:
+        - openmm
+      imports:
+        - openmmforcefields
+
+  - name: openmmforcefields
+    build:
+      noarch: python
+
+    requirements:
+      run:
+        - openff-toolkit >=0.9.0
+        - openff-forcefields >=1.2.0
+        - {{ pin_subpackage('openmmforcefields-base', max_pin="x.x.x") }}
+
+    test:
+      imports:
+        - openmmforcefields
 
 about:
   home: http://openmm.org/
