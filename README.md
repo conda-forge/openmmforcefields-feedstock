@@ -22,11 +22,44 @@ Current build status
 ====================
 
 
-<table><tr><td>All platforms:</td>
+<table>
+    
+  <tr>
+    <td>Azure</td>
     <td>
-      <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=11836&branchName=master">
-        <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/openmmforcefields-feedstock?branchName=master">
-      </a>
+      <details>
+        <summary>
+          <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=11836&branchName=master">
+            <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/openmmforcefields-feedstock?branchName=master">
+          </a>
+        </summary>
+        <table>
+          <thead><tr><th>Variant</th><th>Status</th></tr></thead>
+          <tbody><tr>
+              <td>linux_64</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=11836&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/openmmforcefields-feedstock?branchName=master&jobName=linux&configuration=linux_64_" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_64</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=11836&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/openmmforcefields-feedstock?branchName=master&jobName=osx&configuration=osx_64_" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>win_64</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=11836&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/openmmforcefields-feedstock?branchName=master&jobName=win&configuration=win_64_" alt="variant">
+                </a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </details>
     </td>
   </tr>
 </table>
@@ -37,6 +70,7 @@ Current release info
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-openmmforcefields-green.svg)](https://anaconda.org/conda-forge/openmmforcefields) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/openmmforcefields.svg)](https://anaconda.org/conda-forge/openmmforcefields) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/openmmforcefields.svg)](https://anaconda.org/conda-forge/openmmforcefields) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/openmmforcefields.svg)](https://anaconda.org/conda-forge/openmmforcefields) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-openmmforcefields--base-green.svg)](https://anaconda.org/conda-forge/openmmforcefields-base) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/openmmforcefields-base.svg)](https://anaconda.org/conda-forge/openmmforcefields-base) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/openmmforcefields-base.svg)](https://anaconda.org/conda-forge/openmmforcefields-base) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/openmmforcefields-base.svg)](https://anaconda.org/conda-forge/openmmforcefields-base) |
 
 Installing openmmforcefields
 ============================
@@ -48,10 +82,10 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `openmmforcefields` can be installed with:
+Once the `conda-forge` channel has been enabled, `openmmforcefields, openmmforcefields-base` can be installed with:
 
 ```
-conda install openmmforcefields
+conda install openmmforcefields openmmforcefields-base
 ```
 
 It is possible to list all of the versions of `openmmforcefields` available on your platform with:
@@ -64,7 +98,8 @@ conda search openmmforcefields --channel conda-forge
 About conda-forge
 =================
 
-[![Powered by NumFOCUS](https://img.shields.io/badge/powered%20by-NumFOCUS-orange.svg?style=flat&colorA=E1523D&colorB=007D8A)](http://numfocus.org)
+[![Powered by
+NumFOCUS](https://img.shields.io/badge/powered%20by-NumFOCUS-orange.svg?style=flat&colorA=E1523D&colorB=007D8A)](https://numfocus.org)
 
 conda-forge is a community-led conda channel of installable packages.
 In order to provide high-quality builds, the process has been automated into the
