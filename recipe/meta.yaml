@@ -27,9 +27,9 @@ requirements:
     - networkx
     - tinydb
     - validators
+    - openff-toolkit >=0.9.0
 
   run_constrained:
-    - openff-toolkit >=0.9.0
     - openforcefield =9999999999999
 
 test:
