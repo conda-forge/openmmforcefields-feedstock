@@ -30,11 +30,6 @@ pkgs_dirs:
   - /opt/conda/pkgs
 
 CONDARC
-<<<<<<< HEAD
-GET_BOA=boa
-BUILD_CMD=mambabuild
-=======
->>>>>>> upstream/main
 
 
 mamba install --update-specs --yes --quiet --channel conda-forge \
