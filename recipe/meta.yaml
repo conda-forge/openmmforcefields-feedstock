@@ -20,15 +20,16 @@ outputs:
 
     requirements:
       host:
-        - python >=3.6
+        - python >=3.8
         - pip
       run:
-        - python >=3.6
+        - python >=3.8
         - openmm >=7.6.0
         - pyyaml
         - lxml
         - networkx
         - tinydb
+        - openff-units >=0.1.8
 
     test:
       requires:
@@ -45,10 +46,17 @@ outputs:
         - openff-toolkit >=0.9.0
         - openff-forcefields >=1.2.0
         - {{ pin_subpackage('openmmforcefields-base', max_pin="x.x.x") }}
+        - ambertools >=20
 
     test:
+      requires:
+        - openff-toolkit >=0.11.0
       imports:
         - openmmforcefields
+      files:
+        - test_generators.py
+      commands:
+        - python test_generators.py
 
 about:
   home: http://openmm.org/
