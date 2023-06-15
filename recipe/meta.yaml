@@ -14,7 +14,7 @@ build:
 
 outputs:
   - name: openmmforcefields-base
-    script: build_base.sh
+    script: {{ PYTHON }} -m pip install . -vv
     build:
       noarch: python
 
