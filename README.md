@@ -1,11 +1,11 @@
-About openmmforcefields
-=======================
+About openmmforcefields-feedstock
+=================================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/openmmforcefields-feedstock/blob/main/LICENSE.txt)
 
 Home: http://openmm.org/
 
 Package license: MIT
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/openmmforcefields-feedstock/blob/main/LICENSE.txt)
 
 Summary: Extra support for additional forcefields in OpenMM
 
@@ -22,50 +22,11 @@ Current build status
 ====================
 
 
-<table>
-    
-  <tr>
-    <td>Azure</td>
+<table><tr><td>All platforms:</td>
     <td>
-<<<<<<< HEAD
-      <details>
-        <summary>
-          <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=11836&branchName=master">
-            <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/openmmforcefields-feedstock?branchName=master">
-          </a>
-        </summary>
-        <table>
-          <thead><tr><th>Variant</th><th>Status</th></tr></thead>
-          <tbody><tr>
-              <td>linux_64</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=11836&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/openmmforcefields-feedstock?branchName=master&jobName=linux&configuration=linux_64_" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>osx_64</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=11836&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/openmmforcefields-feedstock?branchName=master&jobName=osx&configuration=osx_64_" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>win_64</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=11836&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/openmmforcefields-feedstock?branchName=master&jobName=win&configuration=win_64_" alt="variant">
-                </a>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </details>
-=======
       <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=11836&branchName=main">
         <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/openmmforcefields-feedstock?branchName=main">
       </a>
->>>>>>> upstream/main
     </td>
   </tr>
 </table>
@@ -88,11 +49,7 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-<<<<<<< HEAD
-Once the `conda-forge` channel has been enabled, `openmmforcefields, openmmforcefields-base` can be installed with:
-=======
-Once the `conda-forge` channel has been enabled, `openmmforcefields` can be installed with `conda`:
->>>>>>> upstream/main
+Once the `conda-forge` channel has been enabled, `openmmforcefields, openmmforcefields-base` can be installed with `conda`:
 
 ```
 conda install openmmforcefields openmmforcefields-base
@@ -101,7 +58,7 @@ conda install openmmforcefields openmmforcefields-base
 or with `mamba`:
 
 ```
-mamba install openmmforcefields
+mamba install openmmforcefields openmmforcefields-base
 ```
 
 It is possible to list all of the versions of `openmmforcefields` available on your platform with `conda`:
@@ -199,6 +156,7 @@ Feedstock Maintainers
 * [@ijpulidos](https://github.com/ijpulidos/)
 * [@jaimergp](https://github.com/jaimergp/)
 * [@jchodera](https://github.com/jchodera/)
+* [@mattwthompson](https://github.com/mattwthompson/)
 * [@mikemhenry](https://github.com/mikemhenry/)
 * [@peastman](https://github.com/peastman/)
 
