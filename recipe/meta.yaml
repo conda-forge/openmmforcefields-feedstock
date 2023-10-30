@@ -7,42 +7,61 @@ package:
 
 source:
   url: https://github.com/openmm/openmmforcefields/archive/{{ version }}.tar.gz
-  sha256: dcf15933b5620b9be6dae013b135528a0db21c04be0c50f34474a6048d40abd3
+  sha256: 0e5be3fa069af2479d50fb5bf98f53b52d5d71f7e0d2ef6911ea0d90c5da8c54
 
 build:
-  noarch: python
-  number: 0
-  script: {{ PYTHON }} -m pip install . -vv --no-deps
+  number: 1
 
-requirements:
-  host:
-    - python >=3.8
-    - pip
-  run:
-    - python >=3.8
-    - openmm >=7.6.0
-    - pyyaml
-    - ambertools >=20.0,<23
-    - lxml
-    - networkx
-    - tinydb
-    - validators
-    - openff-toolkit >=0.11
-    - openff-units >=0.1.8
+outputs:
+  - name: openmmforcefields-base
+    script: build_base.sh
+    build:
+      noarch: python
 
-  run_constrained:
-    - openforcefield =9999999999999
-    - espaloma >=0.3.2
+    requirements:
+      host:
+        - python >=3.8
+        - pip
+      run:
+        - python >=3.8
+        - openmm >=7.6.0
+        - pyyaml
+        - lxml
+        - networkx
+        - tinydb
+        - validators
+        - openff-units >=0.1.8
 
-test:
-  requires:
-    - openff-toolkit >=0.11.0
-  imports:
-    - openmmforcefields
-  files:
-    - test_generators.py
-  commands:
-    - python test_generators.py
+      run_constrained:
+        - openforcefield =9999999999999
+        - espaloma >=0.3.2
+
+    test:
+      requires:
+        - openmm
+      imports:
+        - openmmforcefields
+
+  - name: openmmforcefields
+    build:
+      noarch: python
+
+    requirements:
+      run:
+        - openff-toolkit >=0.11
+        - openff-forcefields
+        - {{ pin_subpackage('openmmforcefields-base', max_pin="x.x.x") }}
+        - ambertools >=20,<23
+
+    test:
+      requires:
+        - openff-toolkit >=0.11.0
+      imports:
+        - openmmforcefields
+      files:
+        - test_generators.py
+      commands:
+        - python test_generators.py
 
 about:
   home: http://openmm.org/
