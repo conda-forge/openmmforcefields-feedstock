@@ -1,5 +1,5 @@
 {% set name = "openmmforcefields" %}
-{% set version = "0.11.2" %}
+{% set version = "0.12.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/openmm/openmmforcefields/archive/{{ version }}.tar.gz
-  sha256: 89888ec81f539323fcf8fba8403adfa40c483f16b978b5861f65afaabe3b2615
+  sha256: dcf15933b5620b9be6dae013b135528a0db21c04be0c50f34474a6048d40abd3
 
 build:
   number: 1
@@ -29,7 +29,12 @@ outputs:
         - lxml
         - networkx
         - tinydb
+        - validators
         - openff-units >=0.1.8
+
+    run_constrained:
+      - openforcefield =9999999999999
+      - espaloma >=0.3.2
 
     test:
       requires:
@@ -43,10 +48,10 @@ outputs:
 
     requirements:
       run:
-        - openff-toolkit >=0.9.0
-        - openff-forcefields >=1.2.0
+        - openff-toolkit >=0.11
+        - openff-forcefields
         - {{ pin_subpackage('openmmforcefields-base', max_pin="x.x.x") }}
-        - ambertools >=20
+        - ambertools >=20,<23
 
     test:
       requires:
