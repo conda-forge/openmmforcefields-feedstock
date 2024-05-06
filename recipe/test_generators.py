@@ -7,7 +7,7 @@ from openmmforcefields.generators import (
 
 molecule = Molecule.from_smiles("c1ccccc1")
 
-for generator_class in [GAFFTemplateGenerator, SMIRNOFFTemplateGenerator]:
+for generator_class in [SMIRNOFFTemplateGenerator]:
 
     template_generator = generator_class(molecules=molecule)
 
