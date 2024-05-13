@@ -37,6 +37,7 @@ Current release info
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-openmmforcefields-green.svg)](https://anaconda.org/conda-forge/openmmforcefields) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/openmmforcefields.svg)](https://anaconda.org/conda-forge/openmmforcefields) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/openmmforcefields.svg)](https://anaconda.org/conda-forge/openmmforcefields) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/openmmforcefields.svg)](https://anaconda.org/conda-forge/openmmforcefields) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-openmmforcefields--base-green.svg)](https://anaconda.org/conda-forge/openmmforcefields-base) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/openmmforcefields-base.svg)](https://anaconda.org/conda-forge/openmmforcefields-base) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/openmmforcefields-base.svg)](https://anaconda.org/conda-forge/openmmforcefields-base) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/openmmforcefields-base.svg)](https://anaconda.org/conda-forge/openmmforcefields-base) |
 
 Installing openmmforcefields
 ============================
@@ -48,16 +49,16 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `openmmforcefields` can be installed with `conda`:
+Once the `conda-forge` channel has been enabled, `openmmforcefields, openmmforcefields-base` can be installed with `conda`:
 
 ```
-conda install openmmforcefields
+conda install openmmforcefields openmmforcefields-base
 ```
 
 or with `mamba`:
 
 ```
-mamba install openmmforcefields
+mamba install openmmforcefields openmmforcefields-base
 ```
 
 It is possible to list all of the versions of `openmmforcefields` available on your platform with `conda`:
