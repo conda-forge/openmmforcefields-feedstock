@@ -22,13 +22,14 @@ requirements:
     - python >=3.10,<3.13
     - openmm >=7.6.0
     - pyyaml
-    - ambertools >=22,<24
     - lxml
     - networkx
     - tinydb
     - validators
-    - openff-toolkit >=0.11
+    - openff-toolkit-base >=0.11
     - openff-units >=0.1.8
+    - openff-interchange ~=0.4.0
+    - rdkit !=2024.03.6
 
   run_constrained:
     - openforcefield =9999999999999
