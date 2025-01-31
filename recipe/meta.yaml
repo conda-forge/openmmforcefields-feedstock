@@ -27,6 +27,7 @@ requirements:
     - networkx
     - tinydb
     - validators
+    - parmed
     - openff-toolkit-base >=0.11
     - openff-units >=0.1.8
     - openff-interchange-base ~=0.4.0
@@ -40,6 +41,7 @@ test:
   imports:
     - openmmforcefields
   requires:
+    - ambertools >=22,<24
     - pytest
     - pytest-xdist
   commands:
