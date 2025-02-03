@@ -28,7 +28,7 @@ requirements:
     - tinydb
     - validators
     - parmed
-    - openff-toolkit-base >=0.11
+    - openff-toolkit-base >=0.14
     - openff-units >=0.1.8
     - openff-interchange-base ~=0.4.0
     - rdkit !=2024.03.6
