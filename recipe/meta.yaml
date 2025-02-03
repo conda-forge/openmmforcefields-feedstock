@@ -7,28 +7,31 @@ package:
 
 source:
   url: https://github.com/openmm/openmmforcefields/archive/{{ version }}.tar.gz
-  sha256: 058a74a31da3e6442ba77444217e028debee255d3ca8bc924a9a5107f594bff1
+  sha256: 622601510439edc8d47f28328e8535ec67803900e514ac3cb938545e2900a6e5
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . -vv --no-deps
 
 requirements:
   host:
     - python >=3.10
     - pip
+    - setuptools
   run:
     - python >=3.10,<3.13
     - openmm >=7.6.0
     - pyyaml
-    - ambertools >=22,<24
     - lxml
     - networkx
     - tinydb
     - validators
-    - openff-toolkit >=0.11
+    - parmed
+    - openff-toolkit-base >=0.14
     - openff-units >=0.1.8
+    - openff-interchange-base ~=0.4.0
+    - rdkit !=2024.03.6
 
   run_constrained:
     - openforcefield =9999999999999
@@ -38,6 +41,7 @@ test:
   imports:
     - openmmforcefields
   requires:
+    - ambertools >=22,<24
     - pytest
     - pytest-xdist
   commands:
