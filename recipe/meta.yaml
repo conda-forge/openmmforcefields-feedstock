@@ -1,3 +1,4 @@
+{% set python_min = '3.10' %}
 {% set name = "openmmforcefields" %}
 {% set version = "0.14.1" %}
 
@@ -7,19 +8,20 @@ package:
 
 source:
   url: https://github.com/openmm/openmmforcefields/archive/{{ version }}.tar.gz
-  sha256: 058a74a31da3e6442ba77444217e028debee255d3ca8bc924a9a5107f594bff1
+  sha256: 622601510439edc8d47f28328e8535ec67803900e514ac3cb938545e2900a6e5
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . -vv --no-deps
 
 requirements:
   host:
-    - python >=3.10
+    - python {{ python_min }}
     - pip
+    - setuptools
   run:
-    - python >=3.10,<3.13
+    - python >={{ python_min }},<3.13
     - openmm >=7.6.0
     - pyyaml
     - ambertools >=22,<24
@@ -40,6 +42,7 @@ test:
   requires:
     - pytest
     - pytest-xdist
+    - python {{ python_min }}
   commands:
     - pytest -v -n logical --pyargs openmmforcefields
 
