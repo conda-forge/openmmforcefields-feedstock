@@ -17,25 +17,25 @@ build:
 
 requirements:
   host:
-    - python {{ python_min }}
     - pip
+    - python {{ python_min }}
     - setuptools
   run:
-    - python >={{ python_min }},<3.13
-    - openmm >=7.6.0
-    - pyyaml
     - ambertools >=22,<24
     - lxml
     - networkx
-    - tinydb
-    - validators
+    - openff-interchange =<0.3.18,0.4.2
     - openff-toolkit >=0.11
     - openff-units >=0.1.8
-    - openff-interchange <0.4.2
+    - openmm >=7.6.0
+    - python >={{ python_min }},<3.13
+    - pyyaml
+    - tinydb
+    - validators
 
   run_constrained:
-    - openforcefield =9999999999999
     - espaloma >=0.3.2
+    - openforcefield =9999999999999
 
 test:
   imports:
