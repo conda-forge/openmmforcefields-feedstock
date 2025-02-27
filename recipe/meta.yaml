@@ -12,29 +12,30 @@ source:
 
 build:
   noarch: python
-  number: 2
+  number: 3
   script: {{ PYTHON }} -m pip install . -vv --no-deps
 
 requirements:
   host:
-    - python {{ python_min }}
     - pip
+    - python {{ python_min }}
     - setuptools
   run:
-    - python >={{ python_min }}
-    - openmm >=7.6.0
-    - pyyaml
     - ambertools >=22,<25
     - lxml
     - networkx
+    - openff-interchange >=0.3.18,<0.4.2
+    - openff-toolkit >=0.16.1
+    - openff-units >=0.1.8
+    - openmm >=7.6.0
+    - python >={{ python_min }}
+    - pyyaml
     - tinydb
     - validators
-    - openff-toolkit >=0.11
-    - openff-units >=0.1.8
 
   run_constrained:
-    - openforcefield =9999999999999
     - espaloma >=0.3.2
+    - openforcefield =9999999999999
 
 test:
   imports:
