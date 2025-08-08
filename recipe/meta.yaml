@@ -24,7 +24,7 @@ requirements:
     - ambertools >=22,<25
     - lxml
     - networkx
-    - numpy
+    - numpy <2.3  # Bug upstream in ParmEd
     - openff-interchange >=0.4  # if we need 0.3, can relax later
     - openff-toolkit >=0.16.1
     - openff-units >=0.2
@@ -45,7 +45,6 @@ test:
     - pytest
     - pytest-xdist
     - python {{ python_min }}
-    - numpy <2.3
   commands:
     - pytest -v -n logical --pyargs openmmforcefields
 
