@@ -24,6 +24,7 @@ requirements:
     - ambertools >=22,<25
     - lxml
     - networkx
+    - numpy
     - openff-interchange >=0.4  # if we need 0.3, can relax later
     - openff-toolkit >=0.16.1
     - openff-units >=0.2
