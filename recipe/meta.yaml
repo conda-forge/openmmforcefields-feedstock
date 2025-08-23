@@ -12,7 +12,7 @@ source:
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . -vv --no-deps
 
 requirements:
@@ -21,6 +21,7 @@ requirements:
     - python {{ python_min }}
     - setuptools
   run:
+    - importlib_resources
     - ambertools >=22,<25
     - lxml
     - networkx
