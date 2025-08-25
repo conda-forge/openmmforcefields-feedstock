@@ -8,11 +8,11 @@ package:
 
 source:
   url: https://github.com/openmm/openmmforcefields/archive/{{ version }}.tar.gz
-  sha256: 16f124ad659ee27d0b04f501eb44c5802886a2ea91941f4e4734e075e0341d11
+  sha256: 761df4be5cd5af027ee2d8b4e29af250ca25171f867f2450fce463f8c7b4cf14
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . -vv --no-deps
 
 requirements:
@@ -21,6 +21,7 @@ requirements:
     - python {{ python_min }}
     - setuptools
   run:
+    - importlib_resources
     - ambertools >=22,<25
     - lxml
     - networkx
