@@ -1,24 +1,27 @@
-{% set python_min = "3.11" %}
-{% set name = "openmmforcefields" %}
-{% set version = "0.15.0" %}
+schema_version: 1
+
+context:
+  python_min: 3.11
+  name: openmmforcefields
+  version: 0.15.0
 
 package:
-  name: {{ name|lower }}
-  version: {{ version }}
+  name: ${{ name|lower }}
+  version: ${{ version }}
 
 source:
-  url: https://github.com/openmm/openmmforcefields/archive/{{ version }}.tar.gz
+  url: https://github.com/openmm/openmmforcefields/archive/${{ version }}.tar.gz
   sha256: 761df4be5cd5af027ee2d8b4e29af250ca25171f867f2450fce463f8c7b4cf14
 
 build:
+  number: 2
   noarch: python
-  number: 1
-  script: {{ PYTHON }} -m pip install . -vv --no-deps
+  script: ${{ PYTHON }} -m pip install . -vv --no-deps
 
 requirements:
   host:
     - pip
-    - python {{ python_min }}
+    - python 3.11.*
     - setuptools
   run:
     - importlib_resources
@@ -30,37 +33,39 @@ requirements:
     - openff-toolkit >=0.16.1
     - openff-units >=0.2
     - openmm >=8.1.2
-    - python >={{ python_min }}
+    - python >=${{ python_min }}
     - pyyaml
     - tinydb
     - validators
-
-  run_constrained:
+  run_constraints:
     - espaloma >=0.3.2
     - openforcefield =9999999999999
 
-test:
-  imports:
-    - openmmforcefields
-  requires:
-    - pytest
-    - pytest-xdist
-    - python {{ python_min }}
-  commands:
-    - pytest -v -n logical --pyargs openmmforcefields
+tests:
+  - python:
+      imports:
+        - openmmforcefields
+      pip_check: false
+      python_version: ${{ python_min }}.*
+  - requirements:
+      run:
+        - pytest
+        - pytest-xdist
+        - python ${{ python_min }}.*
+    script:
+      - pytest -v -n logical --pyargs openmmforcefields
 
 about:
-  home: http://openmm.org/
   license: MIT
-  license_family: MIT
   license_file: LICENSE
   summary: Extra support for additional forcefields in OpenMM
   description: |
     Support for AMBER and CHARMM force fields and small molecule
     parameterization with GAFF and the Open Force Field Toolkit
     for OpenMM.
-  doc_url: http://docs.openmm.org/
-  dev_url: https://github.com/openmm/openmmforcefields
+  homepage: http://openmm.org/
+  repository: https://github.com/openmm/openmmforcefields
+  documentation: http://docs.openmm.org/
 
 extra:
   recipe-maintainers:
