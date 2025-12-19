@@ -47,11 +47,13 @@ tests:
         - openmmforcefields
       pip_check: false
       python_version: ${{ python_min }}.*
+
   - requirements:
       run:
         - pytest
         - pytest-xdist
         - python ${{ python_min }}.*
+        - smirnoff99frosst
     script:
       - pytest -v -n logical --pyargs openmmforcefields
 
