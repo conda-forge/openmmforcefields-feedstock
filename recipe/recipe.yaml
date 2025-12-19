@@ -3,7 +3,7 @@ schema_version: 1
 context:
   python_min: 3.11
   name: openmmforcefields
-  version: 0.15.0
+  version: 0.15.1
 
 package:
   name: ${{ name|lower }}
@@ -14,7 +14,7 @@ source:
   sha256: 761df4be5cd5af027ee2d8b4e29af250ca25171f867f2450fce463f8c7b4cf14
 
 build:
-  number: 2
+  number: 0
   noarch: python
   script: ${{ PYTHON }} -m pip install . -vv --no-deps
 
