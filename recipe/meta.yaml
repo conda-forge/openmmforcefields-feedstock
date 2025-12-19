@@ -1,6 +1,6 @@
 {% set python_min = "3.11" %}
 {% set name = "openmmforcefields" %}
-{% set version = "0.15.0" %}
+{% set version = "0.15.1" %}
 
 package:
   name: {{ name|lower }}
@@ -8,11 +8,11 @@ package:
 
 source:
   url: https://github.com/openmm/openmmforcefields/archive/{{ version }}.tar.gz
-  sha256: 761df4be5cd5af027ee2d8b4e29af250ca25171f867f2450fce463f8c7b4cf14
+  sha256: 87df050a602c3a2985c4f87e8df53b9bd829ebe405718217d6df586075e00603
 
 build:
   noarch: python
-  number: 1
+  number: 0
   script: {{ PYTHON }} -m pip install . -vv --no-deps
 
 requirements:
