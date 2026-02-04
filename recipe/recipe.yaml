@@ -14,7 +14,7 @@ source:
   sha256: 87df050a602c3a2985c4f87e8df53b9bd829ebe405718217d6df586075e00603
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: ${{ PYTHON }} -m pip install . -vv --no-deps
 
@@ -28,7 +28,7 @@ requirements:
     - ambertools >=22,<25
     - lxml
     - networkx
-    - numpy <2.3  # Bug upstream in ParmEd
+    - numpy
     - openff-interchange >=0.4  # if we need 0.3, can relax later
     - openff-toolkit >=0.16.1
     - openff-units >=0.2
