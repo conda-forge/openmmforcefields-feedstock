@@ -40,6 +40,7 @@ requirements:
   run_constraints:
     - espaloma >=0.3.2
     - openforcefield =9999999999999
+    - parmed >= 4.3.1
 
 tests:
   - python:
