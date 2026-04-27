@@ -3,7 +3,7 @@ schema_version: 1
 context:
   python_min: 3.11
   name: openmmforcefields
-  version: 0.15.1
+  version: 0.16.0
 
 package:
   name: ${{ name|lower }}
@@ -11,10 +11,10 @@ package:
 
 source:
   url: https://github.com/openmm/openmmforcefields/archive/${{ version }}.tar.gz
-  sha256: c13e3c88e84cca182ee24bdfe2e4b805ed7b9e1e4f34a960af03ac03eb08ae88
+  sha256: 0961e2176173824a597afeaddda39077726c4ca9271fcf540252b0852e7fdeff
 
 build:
-  number: 1
+  number: 0
   noarch: python
   script: ${{ PYTHON }} -m pip install . -vv --no-deps
 
@@ -27,12 +27,11 @@ requirements:
     - importlib_resources
     - ambertools >=22,<25
     - lxml
-    - networkx
     - numpy
     - openff-interchange >=0.4  # if we need 0.3, can relax later
     - openff-toolkit >=0.16.1
     - openff-units >=0.2
-    - openmm >=8.1.2
+    - openmm >=8.5.1
     - python >=${{ python_min }}
     - pyyaml
     - tinydb
